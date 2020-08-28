@@ -1,11 +1,11 @@
 def my_hash_creator(key, value)
   # return a hash that includes the key and value parameters passed into this method
-  { key => value }
+  {key => value}
 end
 
 def read_from_hash(hash, key)
   # return the correct value using the hash and key parameters
-  { hash => key}
+  hash[key]
 end
 
 def update_counting_hash(hash, key)
@@ -13,9 +13,9 @@ def update_counting_hash(hash, key)
   # if the provided key is not present in the hash, add it and assign it to the value of 1
   # if the provided key is present, increment its value by 1
   {hash => key}
-  if [key]
-     [key] += 1 
+  if hash[key]
+     hash[key] = hash[key] + 1 
    else 
-     puts hash => key 
-    
+    hash[key] = 1 
+    end 
 end
